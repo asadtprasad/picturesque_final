@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+	<title>Mostudio</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	
+	<link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Abril+Fatface&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	<link rel="stylesheet" href="/static/css/animate.css">
+	
+	<link rel="stylesheet" href="/static/css/owl.carousel.min.css">
+	<link rel="stylesheet" href="/static/css/owl.theme.default.min.css">
+	<link rel="stylesheet" href="/static/css/magnific-popup.css">
+
+	
+	<link rel="stylesheet" href="/static/css/flaticon.css">
+	<link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+
+	<div id="colorlib-page">
+		<a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle"><i></i></a>
+		<aside id="colorlib-aside" role="complementary" class="js-fullheight">
+
+			<h1 id="colorlib-logo" class="mb-4 mb-md-5"><a href="index.html" style="background-image: url(/static/images/bg_1.jpg);">Picturesque</a></h1>
+			<nav id="colorlib-main-menu" role="navigation">
+				<ul>
+                    <li > <a href="/arthome/" class="nav-item nav-link active">Home</a></li>
+                    <li class="colorlib-active"><a href="/postimg/" class="nav-item nav-link">Post Pics</a></li>
+                    <li><a href="/myimg/" class="nav-item nav-link">My Pics</a></li>
+                    <li><a href="/myauction/" class="nav-item nav-link">My Auction</a></li>
+                    <li><a href="/vresult/" class="nav-item nav-link">Auction Result</a></li>
+                    <li><a href="/bookingreq/" class="nav-item nav-link">Bookings</a></li>
+                    <li><a href="/vorder/" class="nav-item nav-link">Orders</a></li>
+
+                    <li><a href="/login/">Logout</a></li>
+				</ul>
+			</nav>
+
+			<div class="colorlib-footer">
+				<!-- <div class="mb-4">
+					<h3>Subscribe for newsletter</h3>
+					<form action="#" class="colorlib-subscribe-form">
+						<div class="form-group d-flex">
+							<div class="icon"><span class="icon-paper-plane"></span></div>
+							<input type="text" class="form-control" placeholder="Enter Email Address">
+						</div>
+					</form>
+				</div> -->
+				<p class="pfooter"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+					Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved 
+					<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+				</div>
+			</aside> <!-- END COLORLIB-ASIDE -->
+			<div id="colorlib-main">
+				<section class="ftco-section ftco-no-pt ftco-no-pb">
+					<div class="container px-md-0">
+						<div class="row d-flex no-gutters">
+							<div class="col-lg-12 col-md-7 order-md-last d-flex align-items-stretch">
+								<div class="contact-wrap w-100 p-md-5 p-4">
+                                    <br/>     <br/>
+									<h3 class="mb-4 heading">My Pics</h3>
+                                    <hr style="border-color: white;"/>
+                                    <br/>    
+                                    <div class="container  pt-5" style="color:white">
+                                        {% for i in pic %}
+                                        <div class="row blog-item px-3 pb-5">
+                                            <div class="col-md-5">
+                                                <img class="img-fluid mb-4 mb-md-0" src="/uploads/{{i.img}}" alt="Image">
+                                            </div>
+                                            <div class="col-md-7">
+                                                <!-- <br/><br/><br/><br/><br/> -->
+                                                <!-- <h3 class="mt-md-4 px-md-3 mb-2 py-2 bg-white font-weight-bold">Lorem ipsum dolor sit amet</h3> -->
+                        
+                                                <div class="d-flex mb-3">
+                                                    <small class="mr-2 text-muted" style="color:white"><b>Likes</b></small>
+                                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                    <small class="mr-2 text-muted" style="color:white"><b>Pic
+                                                            Privacy</b></small>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                    <small class="mr-2 text-muted" style="color:white"><b>Tags</b></small>
+                                                </div>
+                                                <div class="d-flex mb-3">
+                                                    <small class="mr-2 text-muted"><i class="fa fa-comments"></i>
+                                                        {{i.likes}}</small>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                    <small class="mr-2 text-muted"><i class="fa fa-folder"></i>
+                                                        {{i.state}}</small>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                    <small class="mr-2 text-muted"><i class="fa fa-calendar-alt"></i> {{i.tags}}</small>
+                                                </div>
+                                                <div class="d-flex mb-12">
+                                                    {% if i.state == "private"%}
+                                                    <small class="mr-2 text-muted"><a href="/prv?id={{i.phid}}&st=public"
+                                                            style="float: right;background-color: sandybrown;color:black">&nbsp;Set as Public</a> </small>
+                                                    {% endif %}
+                                                    {% if i.state == "public"%}
+                                                    <small class="mr-2 text-muted"><a href="/prv?id={{i.phid}}&st=private"
+                                                            style="float: right;background-color: sandybrown;color:black">Set as Private</a> </small>
+                                                    {% endif %}
+                                                    <small class="mr-2 text-muted"><a href="/reqa?wid={{i.phid}}"
+                                                            style="float: right;background-color: rgb(39, 238, 82);color:black">Request for Auction</a>
+                                                    </small>
+                                                    <!-- <small class="mr-2 text-muted"><a  href="/sale?wid={{i.phid}}" style="float: right;background-color: rgb(145, 172, 240);">Set for Sale</a> </small> -->
+                                                    <a class="btn btn-link p-0" href="/delpic?id={{i.phid}}"
+                                                        style="float: right;background-color: rgb(189, 21, 21);color: black;">&nbsp;X <i
+                                                            class="fa fa-multi"></i></a>
+                                                </div>
+                                                <br />
+                                                {% if sl %}
+                                               
+                                                {% if i.state == "public"%}
+                        
+                        
+                                                <div class="d-flex mb-3">
+                                                    <form action="/sale/">
+                                                        <table style="width:100%">
+                                                            <tr>
+                                                                <td><input type="number" min="1" name="amt" style="width: 100px;"
+                                                                        value="" /> 
+                                                                       
+                                                                    <input type="hidden" name="wid" value="{{i.phid}}" />
+                                                                </td>
+                                                                <td><input type="submit" value="Set for Sale"
+                                                                        style="float: right;  background-color:aquamarine; height: 25px; font-size: small;" />
+                                                                       
+                                                                </td>
+                                                                <td> {% for j in sl %}{% if i.phid == j.wrkid %}{{j.amt}} {% endif %} {% endfor %}</td>
+                                                            </tr>
+                                                        </table>
+                                                    </form>
+                                                </div>
+                                        
+                                                {% endif %}
+                                               
+                                                {% else %}
+                        
+                                                <div class="d-flex mb-3">
+                                                    <form action="/sale/">
+                                                        <table style="width:100%">
+                                                            <tr>
+                                                                <td><input type="number" min="1" name="amt" style="width: 100px;"
+                                                                        value="" />
+                                                                    <input type="hidden" name="wid" value="{{i.phid}}" />
+                                                                </td>
+                                                                <td><input type="submit" value="Set for Sale"
+                                                                        style="float: right;  background-color:aquamarine; height: 25px; font-size: small;" />
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </form>
+                                                </div>
+                                                {% endif %}
+                                            </div>
+                                        </div> {% endfor %}
+                                    </div>
+								</div>
+							</div>
+                           
+						</div>
+					
+					</div>
+				</section>
+			</div><!-- END COLORLIB-MAIN -->
+		</div><!-- END COLORLIB-PAGE -->
+
+		<!-- loader -->
+		<div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
+
+        <script src="/static/js/jquery.min.js"></script>
+		<script src="/static/js/jquery-migrate-3.0.1.min.js"></script>
+		<script src="/static/js/popper.min.js"></script>
+		<script src="/static/js/bootstrap.min.js"></script>
+		<script src="/static/js/jquery.easing.1.3.js"></script>
+		<script src="/static/js/jquery.waypoints.min.js"></script>
+		<script src="/static/js/jquery.stellar.min.js"></script>
+		<script src="/static/js/owl.carousel.min.js"></script>
+		<script src="/static/js/jquery.magnific-popup.min.js"></script>
+		<script src="/static/js/jquery.animateNumber.min.js"></script>
+		<script src="/static/js/scrollax.min.js"></script>
+		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+		<script src="/static/js/google-map.js"></script>
+		<script src="/static/js/main.js"></script>
+		
+	</body>
+	</html>
+                     
+                 
+                        
+                    
+           

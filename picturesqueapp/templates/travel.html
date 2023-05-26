@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>{% load static %}
+        <meta charset="utf-8">
+        <title>Bloggy - Personal Blog Template</title>
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta content="Free Website Template" name="keywords">
+        <meta content="Free Website Template" name="description">
+
+        <!-- Favicon -->
+        <link href="/static/img/favicon.ico" rel="icon">
+
+        <!-- Google Fonts -->
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:300;400;600;700;800&display=swap" rel="stylesheet">
+
+        <!-- Font Awesome -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+
+        <!-- Customized Bootstrap Stylesheet -->
+        <link href="/static/css/style.css" rel="stylesheet">
+    </head>
+
+<body>
+    <div class="wrapper">
+        <div class="sidebar">
+            <div class="sidebar-text d-flex flex-column h-100 justify-content-center text-center">
+                <img class="mx-auto d-block w-75 bg-primary img-fluid rounded-circle mb-4 p-3" src="/static/img/profile.jpg" alt="Image">
+                <h1 class="font-weight-bold">Photo Share </h1>
+                <p class="mb-4">
+                    Justo stet no accusam stet invidunt sanctus magna clita vero eirmod, sit sit labore dolores lorem. Lorem at sit dolor dolores sed diam justo
+                </p>
+              
+                <a href="/index/" class="btn btn-lg btn-block btn-primary mt-auto">Loogut</a>
+            </div>
+            <div class="sidebar-icon d-flex flex-column h-100 justify-content-center text-right">
+                <i class="fas fa-2x fa-angle-double-right text-primary"></i>
+            </div>
+        </div>
+        <div class="content">
+            <!-- Navbar Start -->
+            <div class="container p-0">
+                <nav class="navbar navbar-expand-lg bg-secondary navbar-dark">
+                    <a href="" class="navbar-brand d-block d-lg-none">Navigation</a>
+                    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+                        <div class="navbar-nav m-auto">
+                          
+                            <a href="/chome/" class="nav-item nav-link active">Home</a>
+                            <a href="/postimg/" class="nav-item nav-link">Post Pics</a>
+                            <a href="/myimg/" class="nav-item nav-link">My Pics</a>
+                            <a href="/travel/" class="nav-item nav-link">Travel Diary</a>
+                            <a href="/mytravel/" class="nav-item nav-link">My Diary</a>
+                            <a href="/vimg/" class="nav-item nav-link">Pictures</a>
+                         
+                         
+                        </div>
+                    </div>
+                </nav>
+            </div>
+            <!-- Navbar End -->
+
+            <!-- Page Header Start -->
+            <div class="container py-5 px-2 bg-primary">
+                <div class="row py-5 px-4">
+                    <div class="col-sm-6 text-center text-md-left">
+                        <h1 class="mb-3 mb-md-0 text-white text-uppercase font-weight-bold">Travel Diary </h1>
+                    </div>
+                    <div class="col-sm-6 text-center text-md-right">
+                      
+                    </div>
+                </div>
+            </div>
+            <!-- Page Header End -->
+
+
+            <!-- Contact Start -->
+            <div class="container bg-white pt-5">
+                
+                <div class="col-md-12 pb-5">
+                    <div class="contact-form">
+                        <div id="success"></div>
+                        <form action="/travelact/" >
+                            <div class="row">
+                                 
+                                <div class="col-md-12">
+                                    <b>Location</b><br/>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" id="loc" name="loc" placeholder="location" required data-error="Please enter your Subject">
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <b>Date</b><br/>
+                                    <div class="form-group">
+                                        <input type="date" class="form-control" id="date" name="date" placeholder="location" required data-error="Please enter your Subject">
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <b>Details</b><br/>
+                                    <div class="form-group">
+                                        <textarea class="form-control" id="dtls" name="dtls"  required ></textarea>
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                  
+                                    <div class="submit-button text-center">
+                                        <button class="btn btn-primary" id="submit" type="submit">Post</button>
+                                        <div id="msgSubmit" class="h3 text-center hidden"></div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form><br/>
+
+                       
+                    </div>
+                </div>
+            </div>
+            <!-- Contact End -->
+
+
+            <!-- Footer Start -->
+            <div class="container py-4 bg-secondary text-center">
+                <p class="m-0 text-white">
+                    &copy; <a class="text-white font-weight-bold" href="#">Your Site Name</a>. All Rights Reserved. Designed by <a class="text-white font-weight-bold" href="https://htmlcodex.com">HTML Codex</a>
+                </p>
+            </div>
+            <!-- Footer End -->
+        </div>
+    </div>
+
+    <!-- Back to Top -->
+    <a href="#" class="back-to-top"><i class="fa fa-angle-double-up"></i></a>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script src="/static/lib/easing/easing.min.js"></script>
+    <script src="/static/lib/waypoints/waypoints.min.js"></script>
+
+    <!-- Contact Javascript File -->
+    <script src="/static/mail/jqBootstrapValidation.min.js"></script>
+    <script src="/static/mail/contact.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="/static/js/main.js"></script>
+</body>
+
+</html>
+                   
